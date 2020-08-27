@@ -9,7 +9,7 @@ variable "hosted_zone" {
 variable "region" {}
 
 variable "availability_zones" {
-  type = "list"
+  type = list(string)
 }
 
 variable "vpc_cidr" {
