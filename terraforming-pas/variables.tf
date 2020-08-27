@@ -83,8 +83,6 @@ variable "rds_instance_class" {
 }
 
 variable "rds_instance_count" {
-  type    = "string"
-  default = 0
 }
 
 /*******************
