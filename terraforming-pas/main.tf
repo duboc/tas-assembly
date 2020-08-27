@@ -83,25 +83,25 @@ module "pas_certs" {
   env_name   = var.env_name
   dns_suffix = var.dns_suffix
 
-  ssl_cert           = var.ssl_cert
-  ssl_private_key    = var.ssl_private_key
-  ssl_ca_cert        = var.ssl_ca_cert
-  ssl_ca_private_key = var.ssl_ca_private_key
+  #ssl_cert           = var.ssl_cert
+  #ssl_private_key    = var.ssl_private_key
+  #ssl_ca_cert        = var.ssl_ca_cert
+  #ssl_ca_private_key = var.ssl_ca_private_key
 }
 
-module "isoseg_certs" {
-  source = "../modules/certs"
-
-  subdomains    = ["*.iso"]
-  env_name      = var.env_name
-  dns_suffix    = var.dns_suffix
-  resource_name = isoseg
-
-  ssl_cert           = var.isoseg_ssl_cert
-  ssl_private_key    = var.isoseg_ssl_private_key
-  ssl_ca_cert        = var.isoseg_ssl_ca_cert
-  ssl_ca_private_key = var.isoseg_ssl_ca_private_key
-}
+#module "isoseg_certs" {
+#  source = "../modules/certs"
+#
+#  subdomains    = ["*.iso"]
+#  env_name      = var.env_name
+#  dns_suffix    = var.dns_suffix
+#  resource_name = isoseg
+#
+#  ssl_cert           = var.isoseg_ssl_cert
+#  ssl_private_key    = var.isoseg_ssl_private_key
+#  ssl_ca_cert        = var.isoseg_ssl_ca_cert
+#  ssl_ca_private_key = var.isoseg_ssl_ca_private_key
+#}
 
 module "pas" {
   source = "../modules/pas"
@@ -128,7 +128,7 @@ module "pas" {
   ops_manager_iam_user_name = module.ops_manager.ops_manager_iam_user_name
   iam_ops_manager_role_name = module.ops_manager.ops_manager_iam_role_name
 
-  create_isoseg_resources = var.create_isoseg_resources
+ # create_isoseg_resources = var.create_isoseg_resources
 
   tags = local.actual_tags
 }

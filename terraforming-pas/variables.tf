@@ -90,7 +90,7 @@ variable "rds_instance_count" {
 * SSL Certificates *
 ********************/
 
-variable "ssl_cert" {
+/*variable "ssl_cert" {
   type        = string
   description = "the contents of an SSL certificate to be used by the LB, optional if `ssl_ca_cert` is provided"
   default     = ""
@@ -141,6 +141,7 @@ variable "isoseg_ssl_ca_private_key" {
   description = "the contents of a CA private key to be used to sign the generated iso seg LB certificate, optional if `isoseg_ssl_cert` is provided"
   default     = ""
 }
+*/
 
 /********
 * Tags *
